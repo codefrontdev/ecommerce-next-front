@@ -1,8 +1,10 @@
 @import "tailwindcss";
-
+@import 'remixicon/fonts/remixicon.css';
+/*? icons => https://remixicon.com/ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --dark-teal: #1d8178;
+  --purple-navy: #1D1134;
+  --lavender-mist: #E5E3F4;
 }
 
 @theme inline {

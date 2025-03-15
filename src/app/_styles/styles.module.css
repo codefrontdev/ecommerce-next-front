@@ -1,0 +1,31 @@
+.linksRouter {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.225rem;
+}
+
+.linksRouter li {
+    color: #111;
+    position: relative;
+}
+
+.linkItem::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0px;
+    height: 2px;
+    margin: -2px;
+    background-color: var(--dark-teal);
+    transition: all 0.3s ease-in-out;
+}
+
+.linkItem:hover::before {
+    width: 100%;
+}
+
+.linkItem:hover {
+    color: var(--dark-teal);
+}
