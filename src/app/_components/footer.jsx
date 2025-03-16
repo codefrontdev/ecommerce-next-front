@@ -1,15 +1,17 @@
 import Image from 'next/image';
+import Link from 'next/link';
+
 export default function Footer() {
     return (
-        <footer className="bg-white w-full">
+        <footer className="bg-[var(--l-mist)] w-full overflow-x-hidden">
             <div className="w-full">
                 <div className="flex flex-col w-full lg:items-start lg:gap-8">
                     {/* Newsletter Section */}
-                    <div className="p-10 bg-[var(--purple-navy)] flex flex-col w-full items-center text-center md:flex-row md:text-left md:gap-10">
+                    <div className="p-10 bg-[var(--p-navy)] flex flex-col w-full items-center text-center md:flex-row md:text-left md:gap-10">
                         {/* Left Section */}
                         <div className="flex w-full md:w-1/2 justify-center md:justify-start">
                             <div>
-                                <h1 className="text-4xl font-bold text-white">Sign Up For Newsletters</h1>
+                                <h1 className="text-4xl font-bold text-[var(--l-mist)]">Sign Up For Newsletters</h1>
                                 <p className="mt-4 text-gray-400 font-semibold">
                                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                                     <span className="text-[#FDAF00]"> Esse non cupiditate</span>
@@ -20,15 +22,15 @@ export default function Footer() {
                         {/* Right Section */}
                         <div className="flex w-full md:w-1/2 justify-end">
                             <form className="w-full md:w-3/4 flex flex-wrap items-center gap-2">
-                                <div className="flex-grow bg-white flex items-center px-4 py-2 rounded-lg shadow-md">
+                                <div className="flex-grow bg-[var(--l-mist)] flex items-center px-4 py-2 rounded-lg shadow-md">
                                     <input
                                         type="email"
                                         id="UserEmail"
                                         placeholder="Your email address"
-                                        className="bg-white w-full border-none focus:outline-none text-sm"
+                                        className="bg-[var(--l-mist)] w-full border-none focus:outline-none text-sm"
                                     />
                                 </div>
-                                <button className="bg-[var(--dark-teal)] px-6 py-3 text-sm font-bold tracking-wide text-white uppercase transition hover:bg-teal-600 rounded-lg">
+                                <button className="bg-[var(--d-teal)] px-6 py-3 text-sm font-bold tracking-wide text-white uppercase transition hover:bg-[--p-navy] rounded-lg">
                                     Sign Up
                                 </button>
                             </form>
@@ -54,7 +56,7 @@ export default function Footer() {
                             <ul className="mt-6 space-y-2 text-lg">
                                 {["About Us", "Delivery Information", "Privacy Policy", "Terms & Conditions", "Contact Us"].map((item) => (
                                     <li key={item}>
-                                        <a href="#" className="text-gray-700 transition hover:text-[var(--dark-teal)]">{item}</a>
+                                        <Link href="#" className="text-gray-700 transition hover:text-[var(--d-teal)]">{item}</Link>
                                     </li>
                                 ))}
                             </ul>
@@ -66,7 +68,7 @@ export default function Footer() {
                             <ul className="mt-6 space-y-2 text-lg">
                                 {["Sign In", "View Cart", "My Wishlist", "Track My Order", "Help"].map((item) => (
                                     <li key={item}>
-                                        <a href="#" className="text-gray-700 transition hover:text-[var(--dark-teal)]">{item}</a>
+                                        <Link href="#" className="text-gray-700 transition hover:text-[var(--d-teal)]">{item}</Link>
                                     </li>
                                 ))}
                             </ul>
@@ -76,15 +78,23 @@ export default function Footer() {
                         <div className="col-span-2 sm:col-span-1">
                             <p className="text-xl font-medium text-black">Install App</p>
                             <ul className="mt-6 space-y-2 text-lg">
-                                <li>Form App Store or Google Play</li>
-                                <li className="flex flex-col " >
-                                    <a className="cursor-pointer transition hover:text-[var(--dark-teal)]"> <i className="ri-apple-fill"> </i> app Store </a>
-                                    <a className="cursor-pointer transition hover:text-[var(--dark-teal)]"><i className="ri-google-play-fill"></i> Google Play</a>
+                                <li>From App Store or Google Play</li>
+                                <li className="flex flex-col">
+                                    <Link href="#" className="cursor-pointer transition hover:text-[var(--d-teal)]">
+                                        <i className="ri-apple-fill"> </i> App Store
+                                    </Link>
+                                    <Link href="#" className="cursor-pointer transition hover:text-[var(--d-teal)]">
+                                        <i className="ri-google-play-fill"></i> Google Play
+                                    </Link>
                                 </li>
-                                <li>Secured Payment Gateways </li>
+                                <li>Secured Payment Gateways</li>
                                 <li>
-                                    <a className="cursor-pointer"><i className="transition text-4xl ri-paypal-fill hover:text-[var(--dark-teal)]"></i></a>
-                                    <a className="cursor-pointer"><i className="transition text-6xl ri-visa-line hover:text-[var(--dark-teal)]"></i></a>
+                                    <Link href="#" className="cursor-pointer">
+                                        <i className="transition text-4xl ri-paypal-fill hover:text-[var(--d-teal)]"></i>
+                                    </Link>
+                                    <Link href="#" className="cursor-pointer">
+                                        <i className="transition text-6xl ri-visa-line hover:text-[var(--d-teal)]"></i>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -92,7 +102,7 @@ export default function Footer() {
 
                     {/* Footer Bottom */}
                     <div className="w-full pb-2 text-center">
-                        <hr className="text-black bg-black opacity-10" />
+                        <hr className="bg-black opacity-10" />
                         <p className="text-lg text-gray-400">&copy; 2022. Company Name. All rights reserved.</p>
                     </div>
                 </div>
