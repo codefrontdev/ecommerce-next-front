@@ -1,0 +1,102 @@
+/* Desktop Navigation */
+.linksRouter {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.225rem;
+}
+
+.linksRouter li {
+    position: relative;
+    color: #111;
+    list-style: none;
+    cursor: pointer;
+}
+
+.linkItem {
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.3s ease-in-out;
+}
+
+.linkItem::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--d-teal);
+    transition: width 0.3s ease-in-out;
+}
+
+.linkItem:hover {
+    color: var(--d-teal);
+}
+
+.linkItem:hover::before {
+    width: 100%;
+}
+
+/* Mobile Menu Styling */
+.mobileMenu {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: var(--l-mist);
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.034);
+    transition: all 0.3s ease-in-out;
+    display: none;
+    visibility: hidden;
+    transform: translateX(100%);
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 60px;
+    z-index: 20;
+}
+
+.mobileMenu.open {
+    visibility: visible;
+    transform: translateX(10px);
+    display: block;
+}
+
+.closeButton {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Mobile Links */
+.mobileLinks {
+    list-style: none;
+    padding-left: 1.5em;
+    text-align: start;
+    width: 100%;
+}
+
+.mobileLinks li {
+    margin: 15px 0;
+}
+
+.mobileLinks a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
+
+.mobileLinks a:hover {
+    color: var(--d-teal);
+}
+
+@media (max-width: 768px) {
+    .linksRouter {
+        display: none;
+    }
+}
