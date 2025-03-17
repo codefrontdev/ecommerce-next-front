@@ -1,5 +1,5 @@
-import Navbar from '../_components/navbar';
-import Footer from '../_components/footer';
+import Navbar from '../layout/navbar';
+import Footer from '../layout/footer';
 import Hero from '../_components/hero';
 import PecialOffers from '../_components/pecialOffers';
 
