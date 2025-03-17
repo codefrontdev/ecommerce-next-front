@@ -1,0 +1,30 @@
+/client-website  
+│── /public                 # الملفات العامة (صور، أيقونات، وغيرها)  
+│── /src  
+│   │── /app                # نظام التوجيه الجديد في Next.js 15 (App Router)  
+│   │   │── /layout         # التخطيطات العامة (Navbar, Footer)  
+│   │   │── /(home)         # الصفحة الرئيسية  
+│   │   │── /(blog)         # المدونة والمقالات  
+│   │   │── /(services)     # خدمات الموقع  
+│   │   │── /(about)        # صفحة "من نحن"  
+│   │   │── /(contact)      # صفحة التواصل  
+│   │   │── sitemap.ts      # ملف إنشاء خريطة الموقع ديناميكيًا  
+│   │── /components         # المكونات القابلة لإعادة الاستخدام  
+│   │── /hooks              # Custom Hooks  
+│   │── /lib                # الأكواد المساعدة مثل جلب البيانات  
+│   │── /services           # استدعاءات API الخارجية  
+│   │── /styles             # ملفات CSS و Tailwind  
+│   │── /config             # إعدادات عامة (SEO, meta tags)  
+│   │── /utils              # دوال مساعدة مثل dateFormatter  
+│── .env                    # متغيرات البيئة  
+│── next.config.mjs         # إعدادات Next.js  
+│── package.json  
+│── tsconfig.json
+
+- desgin ui 
+https://www.behance.net/gallery/219534323/Responsive-Complete-Ecommerce-Website-Design?tracking_source=search_projects|ecommerce+web+design+complete+&l=1&
+
+
+install icons = npm install remixicon => https://remixicon.com 
+
+https://undraw.co => illustrations svg snd png 
