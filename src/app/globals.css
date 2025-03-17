@@ -9,14 +9,15 @@ html {
   width: 100vw;
 }
 
+::selection {
+  color:var(--l-mist);
+  background: var(--d-teal);
+}
+
 :root {
   --d-teal: #1d8178;
-  /* Dark Teal */
 
   --p-navy: #1D1134;
-  /* Purple Navy */
 
   --l-mist: #E5E3F4;
-  /* Lavender Mist */
-
 }

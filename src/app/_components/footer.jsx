@@ -2,12 +2,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
+    const socialLinks = [
+        { href: "https://facebook.com", iconClass: "ri-facebook-fill" },
+        { href: "https://instagram.com", iconClass: "ri-instagram-line" },
+        { href: "https://twitter.com", iconClass: "ri-twitter-x-line" },
+        { href: "https://youtube.com", iconClass: "ri-youtube-fill" },
+        { href: "https://tiktok.com", iconClass: "ri-tiktok-fill" }
+    ]
     return (
         <footer className="bg-[var(--l-mist)] w-full overflow-x-hidden">
             <div className="w-full">
                 <div className="flex flex-col w-full lg:items-start lg:gap-8">
                     {/* Newsletter Section */}
-                    <div className="p-10 bg-[var(--p-navy)] flex flex-col w-full items-center text-center md:flex-row md:text-left md:gap-10">
+                    <div className="bg-[var(--p-navy)] p-18 flex flex-col w-full items-center text-center md:flex-row md:text-left md:gap-10">
                         {/* Left Section */}
                         <div className="flex w-full md:w-1/2 justify-center md:justify-start">
                             <div>
@@ -38,7 +45,7 @@ export default function Footer() {
                     </div>
 
                     {/* Footer Links Section */}
-                    <div className="p-9 w-full grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-y-16">
+                    <div className="p-18 w-full grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-y-16">
                         {/* Contact */}
                         <div className="col-span-1">
                             <Image width={45} height={45} src="/elc logo.svg" className="mb-6" alt="logo" />
@@ -47,6 +54,18 @@ export default function Footer() {
                                 <li>Address: <span className="text-gray-400">Sale Al Jadida N56 Ain Agadir</span></li>
                                 <li>Phone: <span className="text-gray-400">+212 600000000</span></li>
                                 <li>Hours: <span className="text-gray-400">10:00 - 18:00 Mon-Fri</span></li>
+                                <li className="flex flex-row gap-2 text-2xl">
+                                    {socialLinks.map((link, index) => (
+                                        <Link
+                                            key={index}
+                                            href={link.href}
+                                            className="text-gray-700 transition hover:text-[var(--d-teal)]"
+                                        >
+                                            <i className={link.iconClass}></i>
+                                        </Link>
+                                    ))}
+                                </li>
+
                             </ul>
                         </div>
 
