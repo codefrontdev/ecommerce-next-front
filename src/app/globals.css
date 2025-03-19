@@ -7,10 +7,11 @@ body,
 html {
   overflow-x: hidden;
   width: 100vw;
+  text-transform: capitalize;
 }
 
 ::selection {
-  color:var(--l-mist);
+  color: var(--l-mist);
   background: var(--d-teal);
 }
 
