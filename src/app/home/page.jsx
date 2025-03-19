@@ -3,7 +3,7 @@ import Footer from '../layout/footer';
 import Hero from '../_components/hero';
 import PecialOffers from '../_components/pecialOffers';
 import Products from '../_components/products'
-import { productsData, productsData2 } from '../../_data/products';
+import { productsData, productsData2 } from '../_data/products';
 
 export default function Home() {
     return (
