@@ -28,3 +28,9 @@ https://www.behance.net/gallery/219534323/Responsive-Complete-Ecommerce-Website-
 install icons = npm install remixicon => https://remixicon.com 
 
 https://undraw.co => illustrations svg snd png 
+
+
+colors {
+    gray-100
+    white #fff
+}

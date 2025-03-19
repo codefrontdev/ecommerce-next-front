@@ -27,7 +27,6 @@ const Hero = () => {
 
                 </div>
             </div>
-
             {/* Image element */}
             <div className="flex items-center justify-center w-full lg:w-1/2 mt-6 lg:mt-0">
                 <Image

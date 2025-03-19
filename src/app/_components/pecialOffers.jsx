@@ -9,7 +9,7 @@ const PecialOffers = () => {
         { image: "/showing-support.svg", text: "Support" },
     ];
     return (
-        <div className="flex flex-wrap w-full bg-[var(--l-mist)] h-auto justify-evenly items-center p-4">
+        <div className="flex flex-wrap w-full bg-gray-100 h-auto justify-evenly items-center p-4">
             {features.map((feature, index) => (
                 <div key={index} className="m-4 p-8 flex flex-col border rounded-xl border-[var(--d-teal)] bg-[#1d817908] items-center space-y-4 text-[var(--d-teal)]">
                     <div className="w-28 h-28 overflow-hidden ">

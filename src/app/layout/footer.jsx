@@ -10,7 +10,7 @@ export default function Footer() {
         { href: "https://tiktok.com", iconClass: "ri-tiktok-fill" }
     ]
     return (
-        <footer className="bg-[var(--l-mist)] w-full overflow-x-hidden">
+        <footer className="bg-gray-100 w-full overflow-x-hidden">
             <div className="w-full">
                 <div className="flex flex-col w-full lg:items-start lg:gap-8">
                     {/* Newsletter Section */}
@@ -18,7 +18,7 @@ export default function Footer() {
                         {/* Left Section */}
                         <div className="flex w-full md:w-1/2 justify-center md:justify-start">
                             <div>
-                                <h1 className="text-4xl font-bold text-[var(--l-mist)]">Sign Up For Newsletters</h1>
+                                <h1 className="text-4xl font-bold text-gray-100">Sign Up For Newsletters</h1>
                                 <p className="mt-4 text-gray-400 font-semibold">
                                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                                     <span className="text-[#FDAF00]"> Esse non cupiditate</span>
@@ -29,12 +29,12 @@ export default function Footer() {
                         {/* Right Section */}
                         <div className="flex w-full md:w-1/2 justify-end">
                             <form className="w-full md:w-3/4 flex flex-wrap items-center gap-2">
-                                <div className="flex-grow bg-[var(--l-mist)] flex items-center px-4 py-2 rounded-lg shadow-md">
+                                <div className="flex-grow bg-gray-100 flex items-center px-4 py-2 rounded-lg shadow-md">
                                     <input
                                         type="email"
                                         id="UserEmail"
                                         placeholder="Your email address"
-                                        className="bg-[var(--l-mist)] w-full border-none focus:outline-none text-sm"
+                                        className="bg-gray-100 w-full border-none focus:outline-none text-sm"
                                     />
                                 </div>
                                 <button className="bg-[var(--d-teal)] px-6 py-3 text-sm font-bold tracking-wide text-white uppercase transition hover:bg-[--p-navy] rounded-lg">
