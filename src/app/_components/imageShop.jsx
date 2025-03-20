@@ -51,7 +51,7 @@ const ImageShop = () => {
                     className={`relative bg-cover bg-center transition-transform duration-300 hover:scale-97 ${image.colSpan} ${image.rowSpan} min-h-[150px]`}
                     style={{ backgroundImage: `url(${image.src})` }}
                 >
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/80"></div>
                     <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 py-6">
                         {image.title.map((text, idx) => (
                             <h1 key={idx} className="text-white text-lg md:text-2xl mb-2">
