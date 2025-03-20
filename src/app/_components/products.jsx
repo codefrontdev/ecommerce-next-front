@@ -23,7 +23,7 @@ export default function Products({ products , title}) {
 
 
 	return (
-		<div className="w-full min-h-screen p-20 bg-gray-100 py-10 flex flex-col items-center">
+		<div className="w-full h-auto p-20 bg-gray-100 py-10 flex flex-col items-center">
 			<div className="text-center mb-8">
 				<h1 className="text-5xl capitalize font-bold text-gray-800">{title}</h1>
 				<p className="text-gray-500 text-lg">Deluxe Collection New Modern Designs</p>

@@ -7,7 +7,7 @@ const images = [
         rowSpan: "row-span-4",
     },
     {
-        src: "/Instagram.jpeg",
+        src: "/hhhh.jpeg",
         title: ["spring / summer", "upcoming season", "the best classic dress is on sale at cara"],
         buttonText: "Collection",
         colSpan: "col-span-2 md:col-span-4",
@@ -25,7 +25,13 @@ const images = [
         title: ["warm collection", "Spring / summer 2025"],
         buttonText: null,
         colSpan: "col-span-1 md:col-span-2",
-        rowSpan: "row-span-2 col-start-2 md:col-start-4 row-start-5",
+        rowSpan: "row-span-2 col-start-2 md:col-start-3 row-start-5",
+    },{
+        src: "/Instagram.jpeg",
+        title: ["warm collection", "Spring / summer 2025"],
+        buttonText: null,
+        colSpan: "col-span-1 md:col-span-2",
+        rowSpan: "row-span-2 col-start-2 md:col-start-5 row-start-5",
     },
     {
         src: "/gdhgjg.jpeg",
