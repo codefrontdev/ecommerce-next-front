@@ -1,57 +1,59 @@
-import Image from 'next/image';
-import React from 'react';
+"use client";
+import React, { useState, useEffect } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
+import ProductCard from "./ProductCard";
+import Pagination from "./Pagination";
+import { fetchProducts } from "../lib/fetchProducts";
+import Loader from "./Loader";
 
-export default function Products({ products , title}) {
+export default function ProductsPage({ title, text }) {
+	const [products, setProducts] = useState([]);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [totalPages, setTotalPages] = useState(1);
+	const [spinner, setspinner] = useState(true);
+	const searchParams = useSearchParams();
+	const router = useRouter();
 
-	const renderStars = (rating) => {
-		const fullStars = Math.floor(rating / 20);
-		const hasHalfStar = (rating % 20) >= 10;
+	useEffect(() => {
+		const page = parseInt(searchParams.get("page") || "1", 10);
+		setCurrentPage(page);
+		setspinner(true);
 
-		return (
-			<div className="flex items-center space-x-2">
-				<div className="flex text-yellow-400">
-					{[...Array(fullStars)].map((_, i) => (
-						<i key={i} className="ri-star-fill text-sm"></i>
-					))}
-					{hasHalfStar && <i className="ri-star-half-fill text-sm"></i>}
-				</div>
+		fetchProducts(page).then(({ products, totalPages }) => {
+			setProducts(products);
+			setTotalPages(totalPages);
+			setspinner(false);
+		});
+	}, [searchParams]);
 
-				<span className="text-gray-500 text-sm font-medium">({rating / 20})</span>
-			</div>
-		);
+	const goToPage = (page) => {
+		if (page >= 1 && page <= totalPages) {
+			router.push(`/?page=${page}`);
+		}
 	};
-
 
 	return (
 		<div className="w-full h-auto p-20 bg-gray-100 py-10 flex flex-col items-center">
 			<div className="text-center mb-8">
 				<h1 className="text-5xl capitalize font-bold text-gray-800">{title}</h1>
-				<p className="text-gray-500 text-lg">Deluxe Collection New Modern Designs</p>
+				<p className="text-gray-500 text-lg">{text}</p>
 			</div>
 
-			<div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center px-4 w-full">
-				{products.map((product, index) => (
-					<div key={index} className="bg-white border border-gray-200 rounded-xl shadow-lg p-5 max-w-sm w-full hover:scale-96 transition-transform duration-300">
-						<div className="w-full aspect-square overflow-hidden rounded-md">
-							<Image src={product.image} width={400} height={400} alt={product.name} className="object-cover w-full h-full" />
-						</div>
+			{spinner && <Loader/>}
 
-						<div className="mt-4">
-							<h2 className="text-gray-500 text-sm">{product.brand}</h2>
-							<h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
+			{!spinner && products.length > 0 ? (
+				<div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center px-4 w-full">
+					{products.map((product) => (
+						<ProductCard key={product.id} product={product} />
+					))}
+				</div>
+			) : (
+				!spinner && <p className="text-3xl text-gray-400">No products available <i className="ri-error-warning-line"></i></p>
+			)}
 
-							<div className="">{renderStars(product.rating)}</div>
-
-							<div className='flex flex-wrap w-full justify-between items-center '>
-								<p className="text-[var(--d-teal)] font-bold text-xl mt-3">${product.price}</p>
-								<button className=" w-[50%] py-2 bg-[var(--p-navy)] text-gray-300 rounded-lg text-sm font-semibold hover:bg-gray-100 hover:text-gray-900 transition-[1s]">
-									<i className="ri-shopping-cart-2-fill mr-2"></i> Add to Cart
-								</button>
-							</div>
-						</div>
-					</div>
-				))}
-			</div>
+			{!spinner && totalPages > 1 && (
+				<Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={goToPage} />
+			)}
 		</div>
 	);
 }

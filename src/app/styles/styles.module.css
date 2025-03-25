@@ -37,3 +37,25 @@
     width: 100%;
 }
 
+.activeLink {
+    color: var(--d-teal);
+    font-weight: bold;
+}
+
+#scrollView {
+    width: 0px;
+    animation: scrollView linear forwards;
+    animation-timeline: scroll();
+    border-end-end-radius: 10pc;
+    background:var(--d-teal);
+}
+
+@keyframes scrollView {
+    0% {
+        width: 0px;
+    }
+    
+    100% {
+        width: 100%;
+    }
+}

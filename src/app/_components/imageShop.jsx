@@ -44,7 +44,7 @@ const images = [
 
 const ImageShop = () => {
     return (
-        <div className="h-screen p-10 md:p-20 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 grid-rows-6 gap-4 bg-gray-100">
+        <div className="h-auto p-10 md:p-20 grid grid-cols md:grid-cols-4 lg:grid-cols-8 grid-rows-6 gap-4 bg-gray-100">
             {images.map((image, index) => (
                 <div
                     key={index}

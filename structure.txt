@@ -21,17 +21,21 @@
 │── package.json  
 │── tsconfig.json
 
+
 - desgin ui 
 https://www.behance.net/gallery/219534323/Responsive-Complete-Ecommerce-Website-Design?tracking_source=search_projects|ecommerce+web+design+complete+&l=1&
 
 
+- fake api => https://fakestoreapi.com/
+
+
 install icons = npm install remixicon => https://remixicon.com 
+
 
 https://undraw.co => illustrations svg snd png 
 
 
-colors {
-    gray-100
-    white #fff
-}
 folder _data is temporarily
+ "status": "SUCCESS",
+"message": "Here you go! You've received ,
+"products": []
